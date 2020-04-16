@@ -1,4 +1,4 @@
-# Redux Todos 
+# Redux Toolkit Todos Lab
 
 Stolen directly from the [redux repo](https://github.com/reduxjs/redux/tree/9c9a4d2a1c62c9dbddcbb05488f8bd77d24c81de/examples/todos)
 
