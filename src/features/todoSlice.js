@@ -5,12 +5,17 @@ export const todoSlice = createSlice({
   name: "todos",
   initialState: [],
   reducers: {
-    addTodo: (state, action) => {
-      state.push({
-        id: nextTodoId++,
-        text: action.payload,
-        completed: false,
-      });
+    addTodo: {
+      reducer: (state, action) => {
+        state.push(action.payload);
+      },
+      prepare: (text) => ({
+        payload: {
+          id: nextTodoId++,
+          text: text,
+          completed: false,
+        },
+      }),
     },
     toggleTodo: (state, action) =>
       state.map((todo) =>
