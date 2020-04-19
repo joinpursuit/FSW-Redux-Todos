@@ -1,4 +1,4 @@
-import todos from './todos'
+import todos from './reducers/todos'
 
 describe('todos reducer', () => {
   it('should handle initial state', () => {
