@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const VisibilityFilters = {
+export const VisibilityFilters = {
   SHOW_ALL: "SHOW_ALL",
   SHOW_COMPLETED: "SHOW_COMPLETED",
   SHOW_ACTIVE: "SHOW_ACTIVE",
@@ -9,8 +9,10 @@ const VisibilityFilters = {
 export const visibilitySlice = createSlice({
   name: "visibilityFilter",
   initialState: VisibilityFilters.SHOW_ALL,
-  reducers: {},
+  reducers: {
+    setVisibilityFilter: (state, action) => action.payload,
+  },
 });
 
-export const {} = visibilitySlice.actions;
+export const { setVisibilityFilter } = visibilitySlice.actions;
 export default visibilitySlice.reducer;
