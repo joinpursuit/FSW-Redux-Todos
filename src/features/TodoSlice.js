@@ -9,5 +9,5 @@ export const TodoSlice =createSlice({
     // state.map(todo => (todo.id === action.id) ? {...todo, completed: !todo.completed} : todo )
     
 })
-export const {addTodo, clearTodo} = TodoSlice.actions
+export const {addTodo, toggleTodo} = TodoSlice.actions
 export default TodoSlice.reducer
