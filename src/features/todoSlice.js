@@ -1,21 +1,25 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { hireFarmer } from "../farmers/farmersSlice";
 
-export const fruitStandSlice = createSlice({
-  name: "fruits",
+let nextTodoId = 0;
+export const todoSlice = createSlice({
+  name: "todos",
   initialState: [],
   reducers: {
-    addFruit: (state, action) => {
-      state.push(action.payload);
+    addTodo: (state, action) => {
+      state.push({
+        id: nextTodoId++,
+        text: action.payload,
+        completed: false,
+      });
     },
-    clearFruits: () => [],
-  },
-  extraReducers: {
-    [hireFarmer]: (state) => {
-      state.push("farmer fruit");
-    },
+    toggleTodo: (state, action) =>
+      state.map((todo) =>
+        todo.id === action.payload
+          ? { ...todo, completed: !todo.completed }
+          : todo
+      ),
   },
 });
 
-export const { addFruit, clearFruits } = fruitStandSlice.actions;
-export default fruitStandSlice.reducer;
+export const { addTodo, toggleTodo } = todoSlice.actions;
+export default todoSlice.reducer;
