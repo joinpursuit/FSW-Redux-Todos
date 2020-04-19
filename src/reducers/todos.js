@@ -1,5 +1,6 @@
 const todos = (state = [], action) => {
   switch (action.type) {
+    //use states for TodoSlice.js
     case 'ADD_TODO':
       return [
         ...state,
