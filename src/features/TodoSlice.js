@@ -4,11 +4,10 @@ export const TodoSlice =createSlice({
     initialState: [],
     reducers:{
         addTodo:(state, {payload})=>{state.push(payload)},
-        clearTodo:()=>[]
-    }, 
-    extraReducers:{
-        [toggleTodos]: state=>{state.push('todo completed')}
-    }
+        toggleTodo:(state, action) =>state.map((todo) => todo.id === action.payload ? { ...todo, completed: !todo.completed }: todo),
+    },
+    // state.map(todo => (todo.id === action.id) ? {...todo, completed: !todo.completed} : todo )
+    
 })
 export const {addTodo, clearTodo} = TodoSlice.actions
 export default TodoSlice.reducer
