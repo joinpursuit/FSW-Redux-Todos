@@ -14,7 +14,9 @@ export const TodoSlice = createSlice({
 
         toggleTodo: (state, { payload }) => {
             debugger
-            state.payload.completed = !payload.completed;
+            state.forEach(todo => {
+                console.log(todo)
+            })
         },
         
             
