@@ -1,6 +1,6 @@
 import {createSlice, createAsyncThunk} from "@reduxjs/toolkit"
 
-let id = 0
+let nextTodoId = 0
 
 export const TodoSlice = createSlice({
     name: "todo",
@@ -20,5 +20,7 @@ export const TodoSlice = createSlice({
         }
     }
 })
+export const {addTodo, toggleTodo} = todoSlice.actions
+export default TodoSlice.reducer
 
 // payFarmer: (state, { payload }) => {state.payload.paid = !state.payload.paid;    
