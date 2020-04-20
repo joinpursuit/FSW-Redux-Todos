@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Todo from './Todo'
-import { toggleTodo } from "./toDoSlice"
+import { toggleTodo } from './toDoSlice'
 import { useSelector } from 'react-redux'
 console.log(useSelector)
 const TodoList = () => {
