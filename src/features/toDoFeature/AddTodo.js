@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { connect } from 'react-redux'
 import { addTodo } from '../toDoFeature/toDoSlice'
 
 const AddTodo = ({ dispatch }) => {
+  // const [ todo, setTodo ] = useState({})
   let input
   return (
     <div>
@@ -11,7 +12,7 @@ const AddTodo = ({ dispatch }) => {
         if (!input.value.trim()) {
           return
         }
-        dispatch(addTodo(input.value))
+        dispatch(addTodo({text: input.value, completed: false}))
         input.value = ''
       }}>
         <input ref={node => input = node} />

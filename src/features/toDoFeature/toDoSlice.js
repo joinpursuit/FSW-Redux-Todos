@@ -1,10 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit"
 
+let nextTodoId = 0 
+
 export const toDoSlice = createSlice({
     name: "toDo",
     initialState: [],
     reducers: {
-        addTodo: (state, action) => [...state, action.payload],
+        addTodo: (state, action) => [...state, {...action.payload, id: nextTodoId++} ],
         toggleTodo: (state, action) => state.map(todo =>
             (todo === action.payload)
               ? {...todo, completed: !todo.completed}

@@ -7,9 +7,9 @@ console.log(useSelector)
 const TodoList = () => {
 
 const todos = useSelector(state => state.todos)
-
-
- return ( <ul> 
+debugger
+ return ( 
+  <ul> 
     {todos.map(todo =>
       <Todo
         key={todo.id}
@@ -18,6 +18,7 @@ const todos = useSelector(state => state.todos)
       />
     )}
   </ul>
+
 )
     }
 
