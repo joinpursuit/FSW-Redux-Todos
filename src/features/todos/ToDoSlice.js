@@ -10,11 +10,12 @@ export const ToDoSlice = createSlice({
             reducer: (state, action) => { state.push(action.payload)},
             prepare: (todo) => ({payload: {id: id++, text:todo ,completed: false}})
         },
-        toggleToDo: (state, action) => {
-            const todo = state.map((todo) => todo.id === action.payload)
+        toggleToDo: (state, action) => 
+            state.map((todo) => todo.id === action.payload
             if(todo) {
                 todo.completed = !todo.completed
-            }
+                }
+            )
         }
     }
 })
