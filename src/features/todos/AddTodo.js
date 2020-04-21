@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 // import { addTodo } from '../actions'
-import { addTodo } from '../features/todos/todosSlicer'
+import { addTodo } from './todosSlice'
 
 const AddTodo = () => {
   const [input, setInput] = useState("");
@@ -9,9 +9,9 @@ const AddTodo = () => {
   
   const handleSubmit = e => {
     e.preventDefault();
-    dispatch(addTodo({
+    dispatch(addTodo(
       input
-    }))
+    ))
     setInput("");
   }
 

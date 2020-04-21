@@ -1,9 +1,9 @@
 import React from "react";
 import Todo from "../../components/Todo";
 import { useSelector, useDispatch } from "react-redux";
-import { toggleTodo, getTodos } from "./todosSlicer";
+import { getTodos } from "./todosSlice";
 
-const TodoArr = () => {
+const DisplayTodos = () => {
   const todos = useSelector((state) => {
     {
       state.todos;
@@ -19,4 +19,4 @@ const TodoArr = () => {
   );
 };
 
-export default TodoArr;
+export default DisplayTodos;

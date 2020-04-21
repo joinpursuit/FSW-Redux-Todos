@@ -1,6 +1,6 @@
 import { configureStore, getDefaultMiddleware} from '@reduxjs/toolkit';
 import logger from 'redux-logger';
-import todos from "../features/todos/todosSlicer";
+import todos from "../features/todos/todosSlice";
 
 const reducer = {
   todos
