@@ -1,19 +1,14 @@
 import React from "react";
-import Todo from "../../components/Todo";
-import { useSelector, useDispatch } from "react-redux";
-import { getTodos } from "./todosSlice";
+import { useSelector } from "react-redux";
+import { selectTodos } from "./todosSlice";
 
 const DisplayTodos = () => {
-  const todos = useSelector((state) => {
-    {
-      state.todos;
-    }
-  });
-  const dispatch = useDispatch();
+  const todos = useSelector(selectTodos)
+
   return (
     <ul>
       {todos.map((todo) => {
-        return <li key={todo.id}>{todo}</li>;
+        return <li key={todo.id}>{todo.text}</li>;
       })}
     </ul>
   );
