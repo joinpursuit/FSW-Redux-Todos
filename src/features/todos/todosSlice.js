@@ -7,8 +7,8 @@ export const todosSlice = createSlice({
   initialState: [],
   reducers: {
     addTodo: {
-      reducer: (state, { payload }) => {
-        (state[payload.id] = payload)
+      reducer: (state, action) => {
+        state.push(action.payload)
       },
       prepare: (todo) => {
         return { payload: { id: autoId++, text: todo, completed: false } };
