@@ -19,7 +19,7 @@ export const todosSlice = createSlice({
       return state.map((todo) => {
         if (todo.id === Number(action.payload)) {
           let newTodo = { ...todo }
-          newTodo.completed = !newTodo.completed
+          newTodo.completed = !newTodo.completed 
           return newTodo
         }
         return todo
