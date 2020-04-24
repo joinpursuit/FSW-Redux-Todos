@@ -5,8 +5,7 @@ export const todosSlice = createSlice({
   initialState: [],
   reducers: {
     addTodo: (state, action) => {
-      let newState = [...state];
-      return newState.push(action.payload);
+      state.unshift(action.payload);
     },
 
     toggleTodo: (state, action) => {

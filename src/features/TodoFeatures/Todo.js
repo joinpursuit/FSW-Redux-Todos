@@ -18,6 +18,7 @@ const Todo = () => {
         completed: false,
       })
     );
+    id++;
     setInput("");
   };
 
