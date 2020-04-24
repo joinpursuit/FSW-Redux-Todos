@@ -1,8 +1,12 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { toggleVis } from "./visibilitySlice";
 
 const Link = ({ children }) => {
+  const dispatch = useDispatch();
+
   const onClick = (e) => {
-    debugger;
+    dispatch(toggleVis(e.target.innerText));
   };
 
   return (

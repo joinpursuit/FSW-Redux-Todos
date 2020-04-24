@@ -7,7 +7,6 @@ export const todosSlice = createSlice({
     addTodo: (state, action) => {
       state.unshift(action.payload);
     },
-
     toggleTodo: (state, action) => {
       return state.map((todo) => {
         if (todo.id === Number(action.payload)) {

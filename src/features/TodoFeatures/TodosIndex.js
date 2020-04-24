@@ -4,11 +4,24 @@ import "./Css/todoIndex.css";
 
 import { todosState } from "./todoSlice";
 import { toggleTodo } from "./todoSlice";
+import { visState } from "../VisibilityFeatures/visibilitySlice";
 
 const TodosIndex = () => {
-  const todos = useSelector(todosState);
+  const stateTodos = useSelector(todosState);
   const dispatch = useDispatch();
+  const vis = useSelector(visState);
+  const filteredTodos = (arr) => {
+    if (vis === "Active") {
+      return arr.filter((todo) => !todo.completed);
+    }
+    if (vis === "Completed") {
+      return arr.filter((todo) => todo.completed);
+    } else {
+      return arr;
+    }
+  };
 
+  let todos = filteredTodos(stateTodos);
   const clickHandler = (e) => {
     dispatch(toggleTodo(e.target.id));
   };
